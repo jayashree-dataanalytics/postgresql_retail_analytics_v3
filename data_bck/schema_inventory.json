@@ -1,0 +1,601 @@
+{
+  "generatedAt": "2026-06-15",
+  "totals": {
+    "schemas": 16,
+    "tables": 55,
+    "rows": 2391603
+  },
+  "schemas": [
+    {
+      "schema": "core",
+      "tables": [
+        {
+          "table": "dim_brand",
+          "rows": 117,
+          "tabs": [
+            "products"
+          ],
+          "purpose": "Brand dimension (brand -> category)"
+        },
+        {
+          "table": "dim_category",
+          "rows": 10,
+          "tabs": [
+            "products",
+            "executive"
+          ],
+          "purpose": "Product category dimension"
+        },
+        {
+          "table": "dim_date",
+          "rows": 788,
+          "tabs": [
+            "sales"
+          ],
+          "purpose": "Date dimension for time-series rollups"
+        },
+        {
+          "table": "dim_department",
+          "rows": 10,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Department dimension for HR & payroll"
+        },
+        {
+          "table": "dim_expense_category",
+          "rows": 15,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Expense category dimension for the P&L"
+        },
+        {
+          "table": "dim_region",
+          "rows": 20,
+          "tabs": [
+            "stores"
+          ],
+          "purpose": "Region dimension for store geography"
+        }
+      ],
+      "rows": 960,
+      "label": "Core dimensions",
+      "icon": "ti-box-multiple",
+      "tableCount": 6
+    },
+    {
+      "schema": "sales",
+      "tables": [
+        {
+          "table": "order_items",
+          "rows": 375202,
+          "tabs": [
+            "sales",
+            "products",
+            "executive"
+          ],
+          "purpose": "Order line items (375K) - product-level revenue"
+        },
+        {
+          "table": "orders",
+          "rows": 150000,
+          "tabs": [
+            "sales",
+            "executive"
+          ],
+          "purpose": "Order headers (150K) - the revenue backbone"
+        },
+        {
+          "table": "payments",
+          "rows": 142450,
+          "tabs": [
+            "sales"
+          ],
+          "purpose": "Order-level payment records"
+        },
+        {
+          "table": "returns",
+          "rows": 7465,
+          "tabs": [
+            "operations"
+          ],
+          "purpose": "Product returns & refund amounts"
+        },
+        {
+          "table": "shipments",
+          "rows": 104987,
+          "tabs": [
+            "operations"
+          ],
+          "purpose": "Order shipments - courier & delivery SLA"
+        }
+      ],
+      "rows": 780104,
+      "label": "Sales",
+      "icon": "ti-shopping-cart",
+      "tableCount": 5
+    },
+    {
+      "schema": "customers",
+      "tables": [
+        {
+          "table": "addresses",
+          "rows": 50000,
+          "tabs": [
+            "customers"
+          ],
+          "purpose": "Customer addresses - city/state/pincode"
+        },
+        {
+          "table": "customers",
+          "rows": 50001,
+          "tabs": [
+            "customers",
+            "executive"
+          ],
+          "purpose": "Customer master - tier & registration"
+        },
+        {
+          "table": "loyalty_points",
+          "rows": 25000,
+          "tabs": [
+            "customers"
+          ],
+          "purpose": "Per-customer points ledger"
+        },
+        {
+          "table": "reviews",
+          "rows": 30000,
+          "tabs": [
+            "products"
+          ],
+          "purpose": "Product reviews & star ratings"
+        },
+        {
+          "table": "wallets",
+          "rows": 50000,
+          "tabs": [
+            "customers"
+          ],
+          "purpose": "Customer wallet balances"
+        }
+      ],
+      "rows": 205001,
+      "label": "Customers",
+      "icon": "ti-users",
+      "tableCount": 5
+    },
+    {
+      "schema": "products",
+      "tables": [
+        {
+          "table": "inventory",
+          "rows": 114153,
+          "tabs": [
+            "products"
+          ],
+          "purpose": "Store inventory levels (quantity_on_hand)"
+        },
+        {
+          "table": "products",
+          "rows": 6036,
+          "tabs": [
+            "products",
+            "executive"
+          ],
+          "purpose": "Product master - price, cost, type"
+        },
+        {
+          "table": "promotions",
+          "rows": 800,
+          "tabs": [
+            "products"
+          ],
+          "purpose": "Active product promotions"
+        },
+        {
+          "table": "suppliers",
+          "rows": 117,
+          "tabs": [
+            "supplychain"
+          ],
+          "purpose": "Supplier master - reliability & lead time"
+        }
+      ],
+      "rows": 121106,
+      "label": "Products",
+      "icon": "ti-package",
+      "tableCount": 4
+    },
+    {
+      "schema": "stores",
+      "tables": [
+        {
+          "table": "employees",
+          "rows": 3000,
+          "tabs": [
+            "stores"
+          ],
+          "purpose": "Store employees + HQ staff"
+        },
+        {
+          "table": "expenses",
+          "rows": 20000,
+          "tabs": [
+            "stores",
+            "finance"
+          ],
+          "purpose": "Store-level operating expenses"
+        },
+        {
+          "table": "stores",
+          "rows": 200,
+          "tabs": [
+            "stores"
+          ],
+          "purpose": "Store master - 200 stores nationwide"
+        }
+      ],
+      "rows": 23200,
+      "label": "Stores",
+      "icon": "ti-building-store",
+      "tableCount": 3
+    },
+    {
+      "schema": "supply_chain",
+      "tables": [
+        {
+          "table": "inventory_snapshots",
+          "rows": 36500,
+          "tabs": [
+            "supplychain"
+          ],
+          "purpose": "Daily warehouse inventory snapshots"
+        },
+        {
+          "table": "shipments",
+          "rows": 2000,
+          "tabs": [
+            "supplychain"
+          ],
+          "purpose": "Inbound supplier -> warehouse shipments"
+        },
+        {
+          "table": "warehouses",
+          "rows": 5,
+          "tabs": [
+            "supplychain"
+          ],
+          "purpose": "Warehouse master"
+        }
+      ],
+      "rows": 38505,
+      "label": "Supply chain",
+      "icon": "ti-truck-delivery",
+      "tableCount": 3
+    },
+    {
+      "schema": "manufacture",
+      "tables": [
+        {
+          "table": "production_lines",
+          "rows": 10,
+          "tabs": [
+            "supplychain"
+          ],
+          "purpose": "Production line master & utilization"
+        },
+        {
+          "table": "work_orders",
+          "rows": 15000,
+          "tabs": [
+            "supplychain"
+          ],
+          "purpose": "Work orders - produced vs rejected units"
+        }
+      ],
+      "rows": 15010,
+      "label": "Manufacturing",
+      "icon": "ti-settings-cog",
+      "tableCount": 2
+    },
+    {
+      "schema": "marketing",
+      "tables": [
+        {
+          "table": "ads_spend",
+          "rows": 4000,
+          "tabs": [
+            "marketing"
+          ],
+          "purpose": "Ad spend by platform & campaign"
+        },
+        {
+          "table": "campaigns",
+          "rows": 250,
+          "tabs": [
+            "marketing"
+          ],
+          "purpose": "Marketing campaigns - budget & ROI"
+        },
+        {
+          "table": "email_clicks",
+          "rows": 500,
+          "tabs": [
+            "marketing"
+          ],
+          "purpose": "Email engagement - sent/opened/clicked"
+        }
+      ],
+      "rows": 4750,
+      "label": "Marketing",
+      "icon": "ti-speakerphone",
+      "tableCount": 3
+    },
+    {
+      "schema": "web_events",
+      "tables": [
+        {
+          "table": "events",
+          "rows": 200000,
+          "tabs": [
+            "marketing"
+          ],
+          "purpose": "Web events (200K) - the conversion funnel"
+        },
+        {
+          "table": "page_views",
+          "rows": 500000,
+          "tabs": [
+            "marketing"
+          ],
+          "purpose": "Page views (500K) - traffic, device, hour"
+        }
+      ],
+      "rows": 700000,
+      "label": "Web events",
+      "icon": "ti-world-www",
+      "tableCount": 2
+    },
+    {
+      "schema": "finance",
+      "tables": [
+        {
+          "table": "accounts",
+          "rows": 200,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "General-ledger accounts"
+        },
+        {
+          "table": "expenses",
+          "rows": 40000,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Operating expenses - the P&L expense side"
+        },
+        {
+          "table": "payment_modes",
+          "rows": 9,
+          "tabs": [
+            "sales"
+          ],
+          "purpose": "Payment-method dimension (UPI/Card/...)"
+        },
+        {
+          "table": "payments",
+          "rows": 142450,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Finance-ledger payment records"
+        },
+        {
+          "table": "revenue_summary",
+          "rows": 788,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Daily revenue rollup (legacy reference)"
+        },
+        {
+          "table": "transfer_log",
+          "rows": 500,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Inter-account transfers"
+        }
+      ],
+      "rows": 183947,
+      "label": "Finance",
+      "icon": "ti-cash",
+      "tableCount": 6
+    },
+    {
+      "schema": "payroll",
+      "tables": [
+        {
+          "table": "pay_slips",
+          "rows": 12000,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Monthly payslips - gross/net payroll"
+        },
+        {
+          "table": "tax_brackets",
+          "rows": 6,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Income-tax bracket reference"
+        }
+      ],
+      "rows": 12006,
+      "label": "Payroll",
+      "icon": "ti-receipt",
+      "tableCount": 2
+    },
+    {
+      "schema": "hr",
+      "tables": [
+        {
+          "table": "attendance",
+          "rows": 88310,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Daily employee attendance"
+        },
+        {
+          "table": "salary_history",
+          "rows": 36000,
+          "tabs": [
+            "finance"
+          ],
+          "purpose": "Salary-change history"
+        }
+      ],
+      "rows": 124310,
+      "label": "HR",
+      "icon": "ti-id-badge",
+      "tableCount": 2
+    },
+    {
+      "schema": "loyalty",
+      "tables": [
+        {
+          "table": "members",
+          "rows": 30000,
+          "tabs": [
+            "customers"
+          ],
+          "purpose": "Loyalty-program members"
+        },
+        {
+          "table": "redemptions",
+          "rows": 10000,
+          "tabs": [
+            "customers"
+          ],
+          "purpose": "Points redemptions"
+        },
+        {
+          "table": "tiers",
+          "rows": 4,
+          "tabs": [
+            "customers"
+          ],
+          "purpose": "Loyalty-tier definitions"
+        }
+      ],
+      "rows": 40004,
+      "label": "Loyalty",
+      "icon": "ti-medal",
+      "tableCount": 3
+    },
+    {
+      "schema": "support",
+      "tables": [
+        {
+          "table": "tickets",
+          "rows": 10000,
+          "tabs": [
+            "operations"
+          ],
+          "purpose": "Support tickets - status, priority, SLA"
+        }
+      ],
+      "rows": 10000,
+      "label": "Support",
+      "icon": "ti-headset",
+      "tableCount": 1
+    },
+    {
+      "schema": "call_center",
+      "tables": [
+        {
+          "table": "calls",
+          "rows": 25000,
+          "tabs": [
+            "operations"
+          ],
+          "purpose": "Call records - duration, reason, sentiment"
+        },
+        {
+          "table": "transcripts",
+          "rows": 25000,
+          "tabs": [
+            "operations"
+          ],
+          "purpose": "Call transcripts for sentiment analysis"
+        }
+      ],
+      "rows": 50000,
+      "label": "Call center",
+      "icon": "ti-phone",
+      "tableCount": 2
+    },
+    {
+      "schema": "audit",
+      "tables": [
+        {
+          "table": "api_requests",
+          "rows": 50000,
+          "tabs": [
+            "audit"
+          ],
+          "purpose": "API request logs - latency & status"
+        },
+        {
+          "table": "application_logs",
+          "rows": 20000,
+          "tabs": [
+            "audit"
+          ],
+          "purpose": "App log stream - errors by service"
+        },
+        {
+          "table": "procedure_calls",
+          "rows": 500,
+          "tabs": [
+            "audit"
+          ],
+          "purpose": "Stored-procedure call audit (JSONB params)"
+        },
+        {
+          "table": "record_changes",
+          "rows": 10000,
+          "tabs": [
+            "audit"
+          ],
+          "purpose": "Change-data-capture of row edits"
+        },
+        {
+          "table": "refund_failures",
+          "rows": 200,
+          "tabs": [
+            "audit"
+          ],
+          "purpose": "Failed refund attempts - risk"
+        },
+        {
+          "table": "refund_log",
+          "rows": 2000,
+          "tabs": [
+            "audit"
+          ],
+          "purpose": "Refund event log"
+        }
+      ],
+      "rows": 82700,
+      "label": "Audit & compliance",
+      "icon": "ti-shield-lock",
+      "tableCount": 6
+    }
+  ]
+}
